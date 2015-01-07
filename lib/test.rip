@@ -1,0 +1,24 @@
+type {
+	result = -> (passes<System.Boolean>, label<System.String>, count<System.Rational>) {
+		status = if (passes) {
+			'ok'
+		} else {
+			'not ok'
+		}
+		System.IO.puts("#{status} #{count} #{label}")
+	}
+
+	assert = => {
+		-> (boolean<System.Boolean>, label<System.String>) {
+			@.result(boolean, label)
+		}
+
+		-> (object) {
+			self(object, "#{object} is truthy")
+		}
+
+		-> (object, label<System.String>) {
+			self(object.to_boolean(), label)
+		}
+	}
+}
