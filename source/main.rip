@@ -3,6 +3,9 @@ System.IO.puts("TAP version #{TAP_VERSION}")
 
 total_count = [
 ].fold(0, -> (count, file) {
+	System.IO.puts('#')
+	System.IO.puts("# #{file}")
+
 	System.require(file).fold(count, -> (_count, test) {
 		test(_count + 1)
 		_count + 1
