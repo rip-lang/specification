@@ -1,0 +1,5 @@
+Test = System.require('../lib/test')
+
+[
+	Test.assert(true, '`true` is predefined')
+]

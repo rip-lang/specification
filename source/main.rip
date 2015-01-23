@@ -2,6 +2,7 @@ TAP_VERSION = 13
 System.IO.puts("TAP version #{TAP_VERSION}")
 
 total_count = [
+	'./basic_usage'
 ].fold(0, -> (count, file) {
 	System.IO.puts('#')
 	System.IO.puts("# #{file}")
